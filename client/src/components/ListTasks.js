@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 
-import EditTodo from "./EditTasks";
+import EditTask from "./EditTasks";
 
 const ListTasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -9,7 +9,8 @@ const ListTasks = () => {
 
   const deleteTask = async id => {
     try {
-      const deleteTask = await fetch(`http://localhost:4000/api/v1/tasks/${id}`, {
+      // const deleteTask =console.log(deleteTask)
+        await fetch(`http://localhost:4000/api/v1/tasks/${id}`, {
         method: "DELETE"
       });
 
@@ -57,7 +58,7 @@ const ListTasks = () => {
             <tr key={task.task_id}>
               <td>{task.description}</td>
               <td>
-                <EditTodo task={task} />
+                <EditTask task={task} />
               </td>
               <td>
                 <button

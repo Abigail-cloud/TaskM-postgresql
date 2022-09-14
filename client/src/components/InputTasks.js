@@ -8,13 +8,14 @@ const InputTasks = () => {
         e.preventDefault();
         try {
             const body = { description };
-            const response = await fetch("http://localhost:4000/api/v1/tasks", {
+            // const response = console.log(response)
+                await fetch("http://localhost:4000/api/v1/tasks", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)
             });
   
-          console.log(response);
+            window.location = "/";
         } catch (err) {
             console.error(err.message);
         }

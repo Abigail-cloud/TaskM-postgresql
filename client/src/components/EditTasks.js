@@ -9,8 +9,9 @@ const EditTask = ({ task }) => {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await fetch(
-        `http://localhost:5000/todos/${task.task_id}`,
+      // const deleteTask =console.log(deleteTask)
+        await fetch(
+        `http://localhost:4000/api/v1/tasks/${task.task_id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -46,7 +47,7 @@ const EditTask = ({ task }) => {
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Edit Todo</h4>
+              <h4 class="modal-title">Edit Task</h4>
               <button
                 type="button"
                 class="close"
